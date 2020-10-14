@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+
+  rules-mysql:
+    build: ./rules-mysql
+    container_name: rules-mysql
+    ports:
+      - 3003:3003
+
+  rules-editor:
+    build: ./rules-editor
+    container_name: rules-editor
+    ports:
+      - 3000:3000
+    environment:
+      - 'BACKEND=http://rules-mysql:3003'
+    links:
+      - rules-mysql

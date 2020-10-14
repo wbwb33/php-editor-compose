@@ -1,0 +1,5 @@
+rules-mysql/.env
+rules-mysql/node_modules
+rules-editor/node_modules
+docker-compose-prod.yml
+prod.sh
